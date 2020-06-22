@@ -1,0 +1,129 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1592822226.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"meta",
+		"apks"
+	],
+	"properties": {
+		"meta": {
+			"$id": "#root/meta", 
+			"title": "Meta", 
+			"type": "object",
+			"required": [
+				"ver"
+			],
+			"properties": {
+				"ver": {
+					"$id": "#root/meta/ver", 
+					"title": "Ver", 
+					"type": "string",
+					"default": "",
+					"examples": [
+						"0.1.0"
+					],
+					"pattern": "^.*$"
+				}
+			}
+		}
+,
+		"apks": {
+			"$id": "#root/apks", 
+			"title": "Apks", 
+			"type": "array",
+			"default": [],
+			"items":{
+				"$id": "#root/apks/items", 
+				"title": "Items", 
+				"type": "object",
+				"required": [
+					"app_id",
+					"sha256",
+					"perms",
+					"domains"
+				],
+				"properties": {
+					"app_id": {
+						"$id": "#root/apks/items/app_id", 
+						"title": "App_id", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"video.like"
+						],
+						"pattern": "^.*$"
+					},
+					"sha256": {
+						"$id": "#root/apks/items/sha256", 
+						"title": "Sha256", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"15D5E111799831F52ADE602B1C46936B0B1828F2"
+						],
+						"pattern": "^.*$"
+					},
+					"perms": {
+						"$id": "#root/apks/items/perms", 
+						"title": "Perms", 
+						"type": "array",
+						"default": []
+					},
+					"domains": {
+						"$id": "#root/apks/items/domains", 
+						"title": "Domains", 
+						"type": "array",
+						"default": [],
+						"items":{
+							"$id": "#root/apks/items/domains/items", 
+							"title": "Items", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"google.com"
+							],
+							"pattern": "^.*$"
+						}
+					},
+					"libs": {
+						"$id": "#root/apks/items/libs", 
+						"title": "Libs", 
+						"type": "array",
+						"default": [],
+						"items":{
+							"$id": "#root/apks/items/libs/items", 
+							"title": "Items", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"com.video.like.foo"
+							],
+							"pattern": "^.*$"
+						}
+					},
+					"api_keys": {
+						"$id": "#root/apks/items/api_keys", 
+						"title": "Api_keys", 
+						"type": "array",
+						"default": [],
+						"items":{
+							"$id": "#root/apks/items/api_keys/items", 
+							"title": "Items", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"9226C22D11C13156C4F9E2DBD5FFB57BF3D5DC2F"
+							],
+							"pattern": "^.*$"
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
