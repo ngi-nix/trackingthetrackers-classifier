@@ -9,6 +9,8 @@ import time
 from fastai2.tabular.all import *
 import pandas as pd
 
+from fe_json2csv import load_reference_data, convert_fe_json2csv
+
 
 schema = dict()
 LEARN = None
@@ -29,7 +31,7 @@ def load_ml():
     return LEARN
 
 
-def inference(features: pd.Series) -> dict:
+def inference(features) -> dict:
     t0 = time.time()
     _, _, probabilities = LEARN.predict(features)
     result =  {'trackers': probabilities[1].item(), 'clean': probabilities[0].item()}
@@ -39,10 +41,9 @@ def inference(features: pd.Series) -> dict:
     return result
 
 
-def convert_to_vec(data: str) -> pd.Series:
+def convert_to_vec(data: dict) -> pd.Series:
     # return data
-    path_example = Path('example-input.csv')
-    df = pd.read_csv(path_example, index_col=0)
+    df = convert_fe_json2csv(data)
     return df
 
 
@@ -72,6 +73,7 @@ def read_json(f):
 if __name__ == "__main__":
     schema = read_schema()
     load_ml()
+    load_reference_data()
     with open(sys.argv[1]) as f:
         out = read_json(f)
         print("result: %r" % out)

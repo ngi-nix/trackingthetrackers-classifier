@@ -3,11 +3,31 @@
         "ver": "0.1.0"
     },
     "apks": [{
-        "app_id": "video.like",
+        "applicationId": "video.like",
         "sha256": "15D5E111799831F52ADE602B1C46936B0B1828F2",
-        "perms": [],
-        "domains": ["google.com", "foobar.com", "evil.xyz"],
-        "libs": ["com.video.like.foo", "bar"],
-        "api_keys": ["9226C22D11C13156C4F9E2DBD5FFB57BF3D5DC2F", "18194860A235BB08DED56B24CCE70179B65A08D1"]
+        "permissions": ["com.amazon.device.messaging.permission.RECEIVE",
+            "info.guardianproject.otr.app.providers.imps.permission.WRITE_ONLY",
+            "android.permission.TETHER_PRIVILEGE",
+            "android.permission.WRITE_PROFILE",
+            "org.awesomeapp.messenger.permission.READ_ONLY",
+            "com.htc.launcher.permission.UPDATE_SHORTCUT",
+            "org.eehouse.android.xw4.permission.C2D_MESSAGE",
+            "godot.BLUETOOTH_ADMIN",
+            "org.mariotaku.twidere.WRITE_DATABASES",
+            "godot.custom.1",
+            "org.gnu.icecat_fxaccount.permission.PER_ACCOUNT_TYPE",
+            "com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY",
+            "com.kaitenmail.permission.READ_MESSAGES",
+            "org.torproject.android.MANAGE_TOR",
+            "godot.BIND_VPN_SERVICE",
+            "godot.SEND_RESPOND_VIA_MESSAGE",
+            "de.m4lik.burningseries.permission.C2D_MESSAGE",
+            "org.openhab.habdroid.gcm.permission.C2D_MESSAGE",
+            "godot.BIND_ACCESSIBILITY_SERVICE",
+            "android.permission.MOUNT_FORMAT_FILESYSTEMS"
+        ],
+        "domainNames": ["google.com", "foobar.com", "evil.xyz"],
+        "dependencies": ["com.video.like.foo", "bar"],
+        "apiKeyIds": ["9226C22D11C13156C4F9E2DBD5FFB57BF3D5DC2F", "18194860A235BB08DED56B24CCE70179B65A08D1"]
     }]
 }

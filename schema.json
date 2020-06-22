@@ -1,8 +1,8 @@
 {
 	"definitions": {},
-	"$schema": "http://json-schema.org/draft-07/schema#", 
-	"$id": "https://example.com/object1592822226.json", 
-	"title": "Root", 
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://example.com/object1592822226.json",
+	"title": "Root",
 	"type": "object",
 	"required": [
 		"meta",
@@ -10,16 +10,16 @@
 	],
 	"properties": {
 		"meta": {
-			"$id": "#root/meta", 
-			"title": "Meta", 
+			"$id": "#root/meta",
+			"title": "Meta",
 			"type": "object",
 			"required": [
 				"ver"
 			],
 			"properties": {
 				"ver": {
-					"$id": "#root/meta/ver", 
-					"title": "Ver", 
+					"$id": "#root/meta/ver",
+					"title": "Ver",
 					"type": "string",
 					"default": "",
 					"examples": [
@@ -31,24 +31,26 @@
 		}
 ,
 		"apks": {
-			"$id": "#root/apks", 
-			"title": "Apks", 
+			"$id": "#root/apks",
+			"title": "Apks",
 			"type": "array",
 			"default": [],
 			"items":{
-				"$id": "#root/apks/items", 
-				"title": "Items", 
+				"$id": "#root/apks/items",
+				"title": "Items",
 				"type": "object",
 				"required": [
-					"app_id",
+					"applicationId",
 					"sha256",
-					"perms",
-					"domains"
+					"permissions",
+					"domainNames",
+					"dependencies",
+					"apiKeyIds"
 				],
 				"properties": {
-					"app_id": {
-						"$id": "#root/apks/items/app_id", 
-						"title": "App_id", 
+					"applicationId": {
+						"$id": "#root/apks/items/applicationId",
+						"title": "applicationId",
 						"type": "string",
 						"default": "",
 						"examples": [
@@ -57,8 +59,8 @@
 						"pattern": "^.*$"
 					},
 					"sha256": {
-						"$id": "#root/apks/items/sha256", 
-						"title": "Sha256", 
+						"$id": "#root/apks/items/sha256",
+						"title": "SHA-256 checksum",
 						"type": "string",
 						"default": "",
 						"examples": [
@@ -66,20 +68,20 @@
 						],
 						"pattern": "^.*$"
 					},
-					"perms": {
-						"$id": "#root/apks/items/perms", 
-						"title": "Perms", 
+					"permissions": {
+						"$id": "#root/apks/items/permissions",
+						"title": "Permissions",
 						"type": "array",
 						"default": []
 					},
-					"domains": {
-						"$id": "#root/apks/items/domains", 
-						"title": "Domains", 
+					"domainNames": {
+						"$id": "#root/apks/items/domainNames",
+						"title": "Domain Names",
 						"type": "array",
 						"default": [],
 						"items":{
-							"$id": "#root/apks/items/domains/items", 
-							"title": "Items", 
+							"$id": "#root/apks/items/domainNames/items",
+							"title": "Items",
 							"type": "string",
 							"default": "",
 							"examples": [
@@ -88,14 +90,14 @@
 							"pattern": "^.*$"
 						}
 					},
-					"libs": {
-						"$id": "#root/apks/items/libs", 
-						"title": "Libs", 
+					"dependencies": {
+						"$id": "#root/apks/items/dependencies",
+						"title": "Maven/Gradle Dependencies",
 						"type": "array",
 						"default": [],
 						"items":{
-							"$id": "#root/apks/items/libs/items", 
-							"title": "Items", 
+							"$id": "#root/apks/items/dependencies/items",
+							"title": "Items",
 							"type": "string",
 							"default": "",
 							"examples": [
@@ -104,14 +106,14 @@
 							"pattern": "^.*$"
 						}
 					},
-					"api_keys": {
-						"$id": "#root/apks/items/api_keys", 
-						"title": "Api_keys", 
+					"apiKeyIds": {
+						"$id": "#root/apks/items/apiKeyIds",
+						"title": "Identifiers for including API Keys",
 						"type": "array",
 						"default": [],
 						"items":{
-							"$id": "#root/apks/items/api_keys/items", 
-							"title": "Items", 
+							"$id": "#root/apks/items/apiKeyIds/items",
+							"title": "Items",
 							"type": "string",
 							"default": "",
 							"examples": [
@@ -126,4 +128,3 @@
 		}
 	}
 }
-
