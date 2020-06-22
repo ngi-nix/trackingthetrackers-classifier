@@ -1,0 +1,11 @@
+{
+    "meta": {
+        "ver": "0.1.0"
+    },
+    "apks": [{
+        "app_idXX": "video.like",
+        "sha256": "15D5E111799831F52ADE602B1C46936B0B1828F2",
+        "perms": [],
+        "domains": ["google.com", "foobar.com", "evil.xyz"]
+    }]
+}

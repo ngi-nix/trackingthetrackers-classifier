@@ -1,0 +1,13 @@
+{
+    "meta": {
+        "ver": "0.1.0"
+    },
+    "apks": [{
+        "app_id": "video.like",
+        "sha256": "15D5E111799831F52ADE602B1C46936B0B1828F2",
+        "perms": [],
+        "domains": ["google.com", "foobar.com", "evil.xyz"],
+        "libs": ["com.video.like.foo", "bar"],
+        "api_keys": ["9226C22D11C13156C4F9E2DBD5FFB57BF3D5DC2F", "18194860A235BB08DED56B24CCE70179B65A08D1"]
+    }]
+}

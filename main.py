@@ -9,6 +9,14 @@ import fileinput
 schema = dict()
 
 
+def load_ml():
+    pass
+
+def inference(j: str) -> dict:
+    result = {"trackers": 0.99, "clean": 0.01}
+    return result
+
+
 def read_schema(path: str = "./schema.json"):
     global schema
     with open(path) as f:
@@ -16,11 +24,11 @@ def read_schema(path: str = "./schema.json"):
         return schema
 
 
-def read_json(j: str):
+def read_json(f):
     try:
-        data = json.loads(j)
+        data = json.load(f)
     except Exception as ex:
-        print("could not parse input (skipping line). Reason %s" % (str(ex),))
+        print("could not parse input (skipping file). Reason %s" % (str(ex),))
         return None
     # validate it
     try:
@@ -29,10 +37,12 @@ def read_json(j: str):
         print("could not validate input (skipping line). Reason %s" % (str(ex),))
         return None
     # to the inference, return the output
-    result = {"trackers": 0.99, "clean": 0.01}
-    return result
+    return inference(data)
 
 
 if __name__ == "__main__":
     schema = read_schema()
-    read_json(fileinput.input())
+    load_ml()
+    with open(sys.argv[1]) as f:
+        out = read_json(f)
+        print("result: %r" % out)
