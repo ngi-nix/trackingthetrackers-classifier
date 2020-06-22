@@ -33,3 +33,10 @@ python fe_json2csv.py tests/in.json
 python main.py tests/in.json
 
 ```
+
+## Integration into other workflows / tools / issuebot
+
+  - make sure it works for you on the cmd line (see Testing above)
+  - for each APK, generate the JSON file in a folder (for example ``in/``)
+  - for this JSON file, call the main.py script with the json file as the first parameter.
+  - the main.py writes onto stdout a JSON answer on how probable it thinkgs that something contains trackers or not.
