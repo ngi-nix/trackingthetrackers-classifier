@@ -69,7 +69,6 @@ def convert_fe_json2csv(j: dict) -> pd.Series:
             found_domains.append(0)
     s2 = pd.Series(found_domains, index=all_domains)
     s3 = s1.append(s2)
-    print(s3)
     return s3
 
 
