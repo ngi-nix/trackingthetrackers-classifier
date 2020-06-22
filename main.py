@@ -4,16 +4,32 @@ import os
 import sys
 import json
 from jsonschema import validate
-import fileinput
+import time
+from fastai2.vision.all import *
 
 schema = dict()
+LEARN = None
+CATEGORIES = None
+
+MODEL="Model/models/latest.pkl"
 
 
 def load_ml():
-    pass
+    global LEARN
+    global CATEGORIES
+
+    t0 = time.time()
+    LEARN = load_learner(MODEL)
+    CATEGORIES = LEARN.dls.vocab  # classes in order of output neurons
+    t1 = time.time()
+    print("duration(load model): %f [sec]" % (t1-t0))
+    return LEARN
 
 def inference(j: str) -> dict:
+    t0 = time.time()
     result = {"trackers": 0.99, "clean": 0.01}
+    t1 = time.time()
+    print("duration(inference): %f [sec]" % (t1-t0))
     return result
 
 
