@@ -17,6 +17,9 @@ def inference(j: str) -> dict:
     return result
 
 
+def convert_to_vec(data: str):
+    return data
+
 def read_schema(path: str = "./schema.json"):
     global schema
     with open(path) as f:
@@ -37,7 +40,7 @@ def read_json(f):
         print("could not validate input (skipping line). Reason %s" % (str(ex),))
         return None
     # to the inference, return the output
-    return inference(data)
+    return inference(convert_to_vec(data))
 
 
 if __name__ == "__main__":
