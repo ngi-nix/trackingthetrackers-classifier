@@ -29,7 +29,10 @@ pip install -r requirements.txt
 # test if the feature extractor JSON to csv converter works:
 python fe_json2csv.py tests/
 
-# test the main script. This will iterate over the tests/ directory and look at subdirs "clean" and "trackers" and search for .json files in there.
+``
+
+
+``main.py` will iterate over the ``tests/`` directory and look at subdirs "clean" and "trackers" and search for .json files in there.
 It expects these JSON input files in the described format (see above) and produces an output of it's a tracker or not as a JSON array:
 python main.py tests/in.json
 
