@@ -9,8 +9,9 @@ import pandas as pd
 import sys
 import json
 
-all_domains = []
-all_perms = []
+all_domains = pd.Series()
+all_perms = pd.Series()
+
 
 def load_domains(path: str):
     global all_domains
@@ -85,6 +86,6 @@ if __name__ == "__main__":
     print(80*"=")
     with open(infile) as f:
         data = json.load(f)
-        print("%r" %data)
+        print("%r" % data)
         df = convert_fe_json2csv(data)
-        df.to_csv('foo.csv', header=None)
+        df.to_csv('foo.csv', header=False)
