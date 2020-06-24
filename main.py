@@ -38,6 +38,7 @@ def inference(features) -> dict:
     # result = {"trackers": 0.99, "clean": 0.01}
     t1 = time.time()
     print("duration(inference): %f [sec]" % (t1 - t0), file=sys.stderr)
+    print(result)
     return result
 
 

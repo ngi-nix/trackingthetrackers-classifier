@@ -1,0 +1,11 @@
+Version 0.2.0:
+
+  * new Model (0.2) 
+  * iterate over all apks/json with main.py
+  * inference works now, no index failures
+
+Version 0.1.0:
+
+  * initial feature extraction JSON2CSV
+  * initial inference
+
