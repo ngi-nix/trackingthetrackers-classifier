@@ -27,17 +27,17 @@ def load_ml():
     LEARN = load_learner(MODEL)
     CATEGORIES = LEARN.dls.vocab  # classes in order of output neurons
     t1 = time.time()
-    print("duration(load model): %f [sec]" % (t1-t0), file=sys.stderr)
+    print("duration(load model): %f [sec]" % (t1 - t0), file=sys.stderr)
     return LEARN
 
 
 def inference(features) -> dict:
     t0 = time.time()
     _, _, probabilities = LEARN.predict(features)
-    result =  {'trackers': probabilities[1].item(), 'clean': probabilities[0].item()}
+    result = {'trackers': probabilities[1].item(), 'clean': probabilities[0].item()}
     # result = {"trackers": 0.99, "clean": 0.01}
     t1 = time.time()
-    print("duration(inference): %f [sec]" % (t1-t0), file=sys.stderr)
+    print("duration(inference): %f [sec]" % (t1 - t0), file=sys.stderr)
     return result
 
 
@@ -66,7 +66,7 @@ def read_json(f):
     except Exception as ex:
         print("could not validate input (skipping line). Reason %s" % (str(ex),), file=sys.stderr)
         return None
-    # to the inference, return the output
+    # do the inference, return the output
     return inference(convert_to_vec(data))
 
 
