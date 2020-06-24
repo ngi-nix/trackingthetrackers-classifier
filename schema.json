@@ -42,10 +42,8 @@
 				"required": [
 					"applicationId",
 					"sha256",
-					"permissions",
-					"domainNames",
-					"dependencies",
-					"apiKeyIds"
+					"usesPermissions",
+					"domainNames"
 				],
 				"properties": {
 					"applicationId": {
@@ -68,8 +66,8 @@
 						],
 						"pattern": "^.*$"
 					},
-					"permissions": {
-						"$id": "#root/apks/items/permissions",
+					"usesPermissions": {
+						"$id": "#root/apks/items/usesPermissions",
 						"title": "Permissions",
 						"type": "array",
 						"default": []
