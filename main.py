@@ -38,7 +38,6 @@ def inference(features) -> dict:
     # result = {"trackers": 0.99, "clean": 0.01}
     t1 = time.time()
     print("duration(inference): %f [sec]" % (t1 - t0), file=sys.stderr)
-    print(result)
     return result
 
 
@@ -71,9 +70,37 @@ def read_json(f):
     return inference(convert_to_vec(data))
 
 
+def evaluate_dir(basedir: Path) -> str:
+    """
+    walks over @basedir and expects two subfolders: clean/ and trackers/.
+    In each of these, it will search for .json files and iterate over them, do the inference and
+    add the result to a pd.Series which is returned.
+    Return format of the pd.Series:
+      * filename (hash) of the apk
+      * expected result (dir was "clean" or "trackers")
+      * result of the prediction
+    :param basedir:
+    :return: pd.Series
+    """
+    l = []
+
+    files = sorted(Path(basedir).glob('**/*.json'))
+    cleanfiles = filter(lambda i: "clean" in str(i), files)
+    trackerfiles = filter(lambda i: "trackers" in str(i), files)
+    for f in cleanfiles:
+        prediction=read_json(f)
+        filename = str(f)
+        l.append({ "file": filename, "ground truth": "clean", "prediction": prediction})
+    for f in trackerfiles:
+        prediction=read_json(f)
+        filename = str(f)
+        l.append({ "filename": filename, "ground truth": "trackers", "prediction": prediction})
+    return json.dumps(l)
+    # res = pd.Series(l)
+    # res.to_csv("out.csv")
+
 if __name__ == "__main__":
     schema = read_schema()
     load_ml()
     load_reference_data()
-    with open(sys.argv[1]) as f:
-        out = read_json(f)
+    print(evaluate_dir(sys.argv[1]))

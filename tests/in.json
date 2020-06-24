@@ -1,11 +1,11 @@
 {
     "meta": {
-        "ver": "0.1.0"
+        "ver": "0.2.0"
     },
     "apks": [{
         "applicationId": "video.like",
         "sha256": "15D5E111799831F52ADE602B1C46936B0B1828F2",
-        "permissions": ["com.amazon.device.messaging.permission.RECEIVE",
+        "usesPermissions": ["com.amazon.device.messaging.permission.RECEIVE",
             "info.guardianproject.otr.app.providers.imps.permission.WRITE_ONLY",
             "android.permission.TETHER_PRIVILEGE",
             "android.permission.WRITE_PROFILE",
