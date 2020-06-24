@@ -50,6 +50,8 @@ python main.py tests/in.json
 ## Integration into other workflows / tools / issuebot
 
   - make sure it works for you on the cmd line (see Testing above)
-  - for each APK, generate the JSON file in a folder (for example ``in/``)
-  - for this JSON file, call the main.py script with the json file as the first parameter.
-  - the main.py writes onto stdout a JSON answer on how probable it thinkgs that something contains trackers or not.
+  - for each APK, generate the JSON file in a folder . The folder should be either "clean" or "trackers". I.e. the folder 
+  name is the label.
+  - for these JSON files, call the main.py script with the directory where ``clean/`` and ``trackers/`` reside in.
+  See the testing example above.
+  - the main.py writes onto stdout a JSON answer on how probable it thinks that something contains trackers or not.
