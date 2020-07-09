@@ -6,6 +6,7 @@ import sys
 import json
 from jsonschema import validate
 import time
+from tqdm import tqdm
 from fastai2.tabular.all import *
 import pandas as pd
 
@@ -85,8 +86,8 @@ def evaluate_dir(basedir: Path) -> str:
     l = []
 
     files = sorted(Path(basedir).glob('**/*.json'))
-    cleanfiles = filter(lambda i: "clean" in str(i), files)
-    trackerfiles = filter(lambda i: "trackers" in str(i), files)
+    cleanfiles = tqdm(filter(lambda i: "clean" in str(i), files))
+    trackerfiles = tqdm(filter(lambda i: "trackers" in str(i), files))
     for f in cleanfiles:
         prediction=read_json(f)
         filename = str(f)
