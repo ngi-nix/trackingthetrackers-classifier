@@ -10,6 +10,9 @@ into a result : contains trackers Y/N (possibly with probabilities)
 Input on stdin:
   * A JSON dict in the format of https://gitlab.com/trackingthetrackers/wiki/-/wikis/JSON-format-definition-for-feature-vectors
   
+(note: should something in the JSON format change, then you can re-create the JSON schema.json file via https://extendsclass.com/json-schema-validator.html)
+
+
 Output on stdout: 
   * JSON dict: { "trackers": 0.976, "clean": 0.024 }
  
@@ -55,3 +58,4 @@ python main.py tests/in.json
   - for these JSON files, call the main.py script with the directory where ``clean/`` and ``trackers/`` reside in.
   See the testing example above.
   - the main.py writes onto stdout a JSON answer on how probable it thinks that something contains trackers or not.
+
