@@ -85,9 +85,9 @@ def evaluate_dir(basedir: Path) -> str:
     """
     l = []
 
-    files = sorted(Path(basedir).glob('**/*.json'))
-    cleanfiles = tqdm(filter(lambda i: "clean" in str(i), files))
-    trackerfiles = tqdm(filter(lambda i: "trackers" in str(i), files))
+    files = tqdm(sorted(Path(basedir).glob('**/*.json')))
+    cleanfiles = filter(lambda i: "clean" in str(i), files)
+    trackerfiles = filter(lambda i: "trackers" in str(i), files)
     for f in cleanfiles:
         prediction=read_json(f)
         filename = str(f)
