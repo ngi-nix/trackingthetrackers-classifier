@@ -1,0 +1,56 @@
+{
+    "meta": { "ver": "0.2.0" },
+    "apks": [ {
+      "applicationId": "video.like",
+      "dependencies": [
+        "com.google.android.apps.analytics.",
+        "com.tapjoy.",
+        "com.umeng.analytics"
+      ],
+      "domainNames": [
+        ".facebook.com",
+        ".google.com",
+        "google-analytics.com",
+        "tapjoyads.com",
+        "umeng.com"
+      ],
+      "sha256": "1c763d1a1d94cd9a242425f515559aae52576d5e08ab069dfe82677cb15ddfba",
+      "usesPermissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.GET_ACCOUNTS",
+        "android.permission.GET_ACCOUNTS",
+        "android.permission.GET_TASKS",
+        "android.permission.GET_TASKS",
+        "android.permission.INTERNET",
+        "android.permission.INTERNET",
+        "android.permission.INTERNET",
+        "android.permission.MOUNT_UNMOUNT_FILESYSTEMS",
+        "android.permission.READ_LOGS",
+        "android.permission.READ_LOGS",
+        "android.permission.READ_PHONE_STATE",
+        "android.permission.READ_PHONE_STATE",
+        "android.permission.READ_PHONE_STATE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.VIBRATE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WAKE_LOCK",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "com.android.vending.BILLING",
+        "com.android.vending.BILLING"
+      ]
+    }
+    ]
+}

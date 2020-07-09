@@ -46,12 +46,12 @@ def convert_fe_json2csv(j: dict) -> pd.Series:
     :returns:  pandas Series of the (sparse) list of matches of domains and
 
     """
-    ver = j['meta']['ver']
+    ver = j['meta']
     if ver != "0.1.0":
-        raise Exception("error: I can only parse the JSON feature extraction format version 0.1.0")
+        raise Exception("error: I can only parse the JSON feature extraction format version 0.2.0")
 
     # first create the permissions series which we need in the inference part
-    perms = set(j['apks'][0]['permissions'])
+    perms = set(j['apks'][0]['usesPermissions'])
     # result vector: 0/1 value in the vector component. Vector has the len of all_perms
     found_perms = []
     for p in all_perms.values:
@@ -79,11 +79,11 @@ if __name__ == "__main__":
     print()
     print("ALL PERMS:\n%r" % all_perms)
     print()
-    print(80*"=")
+    print(80 * "=")
     infile = "tests/in.json"
     print()
     print("Trying to read the JSON file %s" % infile)
-    print(80*"=")
+    print(80 * "=")
     with open(infile) as f:
         data = json.load(f)
         print("%r" % data)
