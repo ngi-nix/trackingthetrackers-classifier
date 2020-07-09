@@ -4,7 +4,7 @@ Version 0.2.0
 
 ## Overview
 
-This repository contains the code / python scripts for taking the [JSON format defintions of feature vectors](https://gitlab.com/trackingthetrackers/wiki/-/wikis/JSON-format-definition-for-feature-vectors) for the [TTT](https://gitlab.com/trackingthetrackers/wiki) project and turns such a JSON definition 
+This repository contains the code / python scripts for taking the [JSON format definitions of feature vectors](https://gitlab.com/trackingthetrackers/wiki/-/wikis/JSON-format-definition-for-feature-vectors) for the [TTT](https://gitlab.com/trackingthetrackers/wiki) project and turns such a JSON definition 
 into a result : contains trackers Y/N (possibly with probabilities)
 
 Input on stdin:

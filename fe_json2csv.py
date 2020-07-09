@@ -48,7 +48,7 @@ def convert_fe_json2csv(j: dict) -> pd.Series:
     """
     ver = j['meta']['ver']
     if ver != "0.2.0":
-        raise Exception("error: I can only parse the JSON feature extraction format version 0.1.0")
+        raise Exception("error: I can only parse the JSON feature extraction format version 0.2.0")
 
     # first create the permissions series which we need in the inference part
     perms = set(j['apks'][0]['usesPermissions'])
