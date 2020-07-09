@@ -90,7 +90,7 @@ def evaluate_dir(basedir: Path) -> str:
     for f in cleanfiles:
         prediction=read_json(f)
         filename = str(f)
-        l.append({ "file": filename, "ground truth": "clean", "prediction": prediction})
+        l.append({ "filename": filename, "ground truth": "clean", "prediction": prediction})
     for f in trackerfiles:
         prediction=read_json(f)
         filename = str(f)
