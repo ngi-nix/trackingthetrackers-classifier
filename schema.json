@@ -12,21 +12,12 @@
 		"meta": {
 			"$id": "#root/meta",
 			"title": "Meta",
-			"type": "object",
-			"required": [
-				"ver"
-			],
-			"properties": {
-				"ver": {
-					"$id": "#root/meta/ver",
-					"title": "Ver",
-					"type": "string",
-					"default": "",
-					"examples": [
-						"0.1.0"
-					],
-					"pattern": "^.*$"
-				}
+            "type": "string",
+            "default": "",
+            "examples": [
+                    "0.2.0"
+                ],
+            "pattern": "^.*$"
 			}
 		}
 ,
