@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/env python
 
 """
 Calculate various statistical parameters (confusion matrix, precision, accuracy, recall, ...).
