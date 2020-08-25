@@ -17,8 +17,6 @@ Expects a json file in the following format (example):
 
 versions used:
 Python             3.8.3
-scikit-learn       0.22.2.post1
-tabulate           0.8.7
 """
 
 import sys
